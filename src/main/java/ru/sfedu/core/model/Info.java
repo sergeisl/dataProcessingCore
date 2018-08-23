@@ -38,8 +38,6 @@ public class Info implements Serializable {
         this.pathData = pathData;
     }
     
-    
-
     public long getId() {
         return id;
     }

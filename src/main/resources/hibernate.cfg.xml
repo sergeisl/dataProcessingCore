@@ -12,17 +12,23 @@
         <property name="connection.password">12345678</property>
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
  
-        <property name="connection.pool_size">1</property>
+        <property name="connection.pool_size">100</property>
         <!--<property name="hbm2ddl.auto">create-drop</property>-->
         <property name="current_session_context_class">thread</property>
         <property name="hibernate.jdbc.batch_size">1500</property>
 
         <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
-        <property name="show_sql">true</property>
+        <!--<property name="show_sql">true</property>-->
         
+        <mapping class="ru.sfedu.core.model.Users"/>
         <mapping class="ru.sfedu.core.model.Info"/>
         <mapping class="ru.sfedu.core.model.Channel_desc"/>
         <mapping class="ru.sfedu.core.model.Channel_val"/>
+        
+        <mapping class="ru.sfedu.core.model.Experiment"/>
+        <mapping class="ru.sfedu.core.model.ExampleExperiment"/>
+        <mapping class="ru.sfedu.core.model.ExperimentData"/>
+        <mapping class="ru.sfedu.core.model.LogEvents"/>
       
                 
     </session-factory>

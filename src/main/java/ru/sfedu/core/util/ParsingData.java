@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import ru.sfedu.core.model.InfoKeyValue;
-
 /**
  *
  * @author sergei
@@ -44,6 +43,26 @@ public class ParsingData {
         });
         i = 0;
         return listData;
+    }
+    
+    public short toShort(byte[] array) {
+        short i = (short) (((0xFF & array[0]) << 0) | ((0xFF & array[1]) << 8));
+        return i;
+    }
+
+    public int toInteger(byte[] array) {
+        int i = ((0xFF & array[0]) << 0) | ((0xFF & array[1]) << 8)
+                | ((0xFF & array[2]) << 16) | (0xFF & array[3] << 24);
+        return i;
+    }
+
+    public double toDouble(byte[] array) {
+
+        double i = ((0xFF & array[0]) << 0) | ((0xFF & array[1]) << 8)
+                | ((0xFF & array[2]) << 16) | (0xFF & array[3] << 24)
+                | ((0xFF & array[4]) << 32) | ((0xFF & array[5]) << 40)
+                | ((0xFF & array[6]) << 48) | (0xFF & array[7] << 56);
+        return i;
     }
 
 }
